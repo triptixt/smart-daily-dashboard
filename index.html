@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Daily Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+       
+</head>
+
+<body>
+    <div class="main-container">
+        
+        <div class="header" id="header">
+            <h1 class="main-title">👋 Smart Daily Dashboard</h1>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title purple">🎯 Goal Setting</h3>
+                </div>
+                <div class="card-content">
+                    <input type="text" id="goalInput" class="input" placeholder="Enter your daily goal...">
+                    <br><br>
+                    <button class="button purple" onclick="setGoal()">Set Goal</button>
+                </div>
+            </div>
+
+            <div class="card todo-card">
+                <div class="card-header">
+                    <h3 class="card-title green">
+                        📝 To-Do List
+                        <span class="task-counter" id="taskCounter">0 tasks</span>
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div class="task-input-container">
+                        <input type="text" id="taskInput" class="input" placeholder="Add a new task...">
+                        <button class="button green" onclick="addTask()">Add Task</button>
+                    </div>
+                    <div class="task-list" id="taskList">
+                        <p class="empty-tasks">No tasks yet. Add one above! 📝</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title indigo">🎨 Theme</h3>
+                </div>
+                <div class="card-content">
+                    <button class="button indigo" onclick="toggleDarkMode()">
+                        <span id="themeText">🌙 Dark Mode</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title blue">⛅ Weather</h3>
+                </div>
+                <div class="card-content">
+                    <div class="weather-image-container">
+                        <img src="https://media.istockphoto.com/id/185206958/photo/light-bulb.jpg?s=612x612&w=0&k=20&c=uff31Cf5Qy0Rss2OBw7aOysvoDEVKJVk53PrLfzGpBI="
+                            alt="Weather" class="weather-image">
+                    </div>
+                    <button class="button blue" onclick="changeWeather()">🔄 Update Weather</button>
+                </div>
+            </div>
+
+            <div class="card" id="quoteCard">
+                <div class="card-header">
+                    <h3 class="card-title yellow">💭 Quote of the Moment</h3>
+                </div>
+                <div class="card-content">
+                    <button class="button yellow" onclick="generateNewQuote()">✨ New Quote</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title pink">😊 Mood Picker</h3>
+                </div>
+                <div class="card-content">
+                    <div class="mood-buttons">
+                        <button class="mood-button active" onclick="setMood('😊', this)">😊</button>
+                        <button class="mood-button" onclick="setMood('😂', this)">😂</button>
+                        <button class="mood-button" onclick="setMood('🥲', this)">🥲</button>
+                    </div>
+                    <p class="mood-message" id="moodMessage">You are feeling happy today.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title gray">🧪 Toggle Sections</h3>
+                </div>
+                <div class="card-content">
+                    <button class="button gray" onclick="toggleSections()">
+                        <span id="toggleText">👁️ Hide Greeting & Quote</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="app.js">
+        
+    </script>
+</body>
+
+</html>
